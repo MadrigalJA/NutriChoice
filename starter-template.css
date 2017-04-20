@@ -1,7 +1,15 @@
 body {
   padding-top: 5rem;
 }
-.starter-template {
-  padding: 3rem 1.5rem;
-  text-align: center;
+
+.thumbnail{
+    text-align: center;
+}
+
+    @media (min-width: 768px) {
+  .row {
+    display: flex;
+    align-items: flex-end;
+  }
+    
 }

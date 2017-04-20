@@ -2,18 +2,18 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta id="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta id="description" content="">
+    <meta id="author" content="">
     <link rel="icon" href="bootstrap/favicon.ico">
 
-    <title>NutriChoice</title>
+    <title>NutriChoice Recipe Planning Tool</title>
 
     <!-- Bootstrap core CSS -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
+    
     <link href="starter-template.css" rel="stylesheet">
+    
   </head>
 
   <body>
@@ -53,30 +53,64 @@
                     <a class="nav-link" id="randomTab" data-toggle="pill" href="#random" role="tab" aria-controls="random" aria-expanded="true">Random</a>
                 </li>
             </ul>
+            
             <div class="tab-content" id="pills-tabContent">
                 <div class="tab-pane fade show active" id="ingredients" role="tabpanel" aria-labelledby="pills-home-tab">
-                <form id="ingredientsForm">
-                    Ingredients:<br>
-                    <textarea form="ingredientsForm" class="center-block form-control input-lg" name="ingredientsText" placeholder="Enter one per line..."></textarea>
-                    <input type="submit" ></input>
-                </form>
-                </div>
+                    <h3>Ingredients</h3>
+                    <div id="ingredientsForm" class="form-group">
+                        <textarea class="form-control input-lg" id="ingredientsText" placeholder="Seperate ingredients by a comma..."></textarea>
+                        <p>Do not include quantity/ measurements.</p>
+                    </div>
+                    
+                </div><!-- /div ingredientsTab -->
+                
                 <div class="tab-pane fade" id="nutrients" role="tabpanel" aria-labelledby="pills-profile-tab">
-                <p>Ad pariatur nostrud pariatur exercitation ipsum ipsum culpa mollit commodo mollit ex. Aute sunt incididunt amet commodo est sint nisi deserunt pariatur do. Aliquip ex eiusmod voluptate exercitation cillum id incididunt elit sunt. Qui minim sit magna Lorem id et dolore velit Lorem amet exercitation duis deserunt. Anim id labore elit adipisicing ut in id occaecat pariatur ut ullamco ea tempor duis.</p>
-                </div>
+                    <h3>Nutrients</h3>
+                    <div id="nutrientForm" class="form-group row">
+                        <label class="col-lg-3 col-md-6 col-xs-12">Min Calories:<input type="number" class="form-control input-lg" id="minCalories" value="" min="0" placeholder="Min Calories"></label>
+                        <label class="col-lg-3 col-md-6 col-xs-12">Max Calories:<input type="number" class="form-control input-lg" id="maxCalories" value="" min="0" placeholder="Max Calories"></label>
+                        
+                        <label class="col-lg-3 col-md-6 col-xs-12">Min Fat:<input type="number" class="form-control input-lg" id="minFat" min="0" placeholder="Min Fat in grams"></label>
+                        <label class="col-lg-3 col-md-6 col-xs-12">Max Fat:<input type="number" class="form-control input-lg" id="maxFat" min="0" placeholder="Max Fat in grams"></label>
+                        
+                        <label class="col-lg-3 col-md-6 col-xs-12">Min Carbs:<input type="number" class="form-control input-lg" id="minCarbs" min="0" placeholder="Min Carbs in grams"></label>
+                        <label class="col-lg-3 col-md-6 col-xs-12">Max Carbs:<input type="number" class="form-control input-lg" id="maxCarbs" min="0" placeholder="Max Carbs in grams"></label>
+                        
+                        <label class="col-lg-3 col-md-6 col-xs-12">Min Protein:<input type="number" class="form-control input-lg" id="minProtein" min="0" placeholder="Min Protein in grams"></label>
+                        <label class="col-lg-3 col-md-6 col-xs-12">Max Protein:<input type="number" class="form-control input-lg" id="maxProtein" min="0" placeholder="Max Protein in grams"></label>
+                    </div>
+                    
+                </div><!-- /div nutrientsTab -->
+                
                 <div class="tab-pane fade" id="random" role="tabpanel" aria-labelledby="pills-dropdown1-tab">
-                <p>Tempor anim aliquip qui nisi sit minim ex in cupidatat ipsum adipisicing. Ad non magna anim id ullamco do dolor sit adipisicing nulla exercitation. Qui Lorem eiusmod sint in laboris pariatur est adipisicing non sunt occaecat in mollit culpa sit. Aliquip id duis do do quis mollit ut duis. Non dolor reprehenderit do esse nostrud deserunt non eiusmod minim anim sit voluptate ipsum. Nulla elit aliqua do sunt labore velit anim nisi dolor nostrud consectetur fugiat ex qui velit ex tempor. Do cillum qui anim aliquip id cillum duis ex laboris tempor incididunt sint dolor ullamco tempor. Fugiat laboris enim anim veniam aliquip cillum irure.</p>
-                </div>
+                    <h3>Choose from some of the preferences below and we will find a recipe for you.</h3>
+                    
+                    <div class="form-group row" id="modTags">
+                    </div>
+                </div><!-- /div randomTab -->
+                  
+            </div>
+            
+            <button class="btn btn-default" onClick="prepSearch()">Find Recipe</button>
+        </div><!-- /div searchHeader-->
+        <div id="searchResults">
+            <div id="searchNotice">
+            </div>
+            <br><h3>Search Results:</h3><br>
+            <div id="resultsSection" class="row" >
+            <div class="col-md-4 col-lg-3 col-xs-12"><div class="thumbnail"><a href="#" id="404126"><img class="img-thumbnail" padding="auto" src="https://spoonacular.com/recipeImages/Asparagus-with-Mushrooms-404126.jpg" alt="image"><div class="caption"><p>Asparagus with Mushrooms</p></div></a></div></div><div class="col-md-4 col-lg-3 col-xs-12"><div class="thumbnail"><a href="#" id="674425"><img class="img-thumbnail" padding="auto" src="https://spoonacular.com/recipeImages/Balsamic-Ginger-Grilled-Portobello-Mushrooms-674425.jpg" alt="image"><div class="caption"><p>Balsamic-Ginger Grilled Portobello Mushrooms</p></div></a></div></div><div class="col-md-4 col-lg-3 col-xs-12"><div class="thumbnail"><a href="#" id="115546"><img class="img-thumbnail" padding="auto" src="https://spoonacular.com/recipeImages/asparagus-with-mushrooms-2-115546.jpg" alt="image"><div class="caption"><p>Asparagus With Mushrooms</p></div></a></div></div><div class="col-md-4 col-lg-3 col-xs-12"><div class="thumbnail"><a href="#" id="9839"><img class="img-thumbnail" padding="auto" src="https://spoonacular.com/recipeImages/lilys-baby-bok-choy-with-dipping-sauce-2-9839.jpg" alt="image"><div class="caption"><p>Lily's Baby Bok Choy With Dipping Sauce</p></div></a></div></div><div class="col-md-4 col-lg-3 col-xs-12"><div class="thumbnail"><a href="#" id="13795"><img class="img-thumbnail" padding="auto" src="https://spoonacular.com/recipeImages/gingery_sauted_watercress_and_shiitakes_recipe-13795.jpg" alt="image"><div class="caption"><p>Gingery Sautéed Watercress And Shiitakes Recipe</p></div></a></div></div>
+            </div>
         </div>
     </div><!-- /.container -->
 
 
     <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
+    ==================================================
+    Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="search.js"></script>
     
   </body>
 </html>
