@@ -1,43 +1,43 @@
-<!DOCTYPE html>
 <html>
 <head>
+  <title>Recipe Instructions</title>
   <meta charset="utf-8">
-  <title>Recipe</title>
-<link rel="stylesheet" type="text/css" href="styles/recipePageStyle.css">
-<script src="recipePage.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="styles/recipePageStyle.css">
+  <script src="recipePage.js"></script>
 </head>
 <body>
-<div id="recipeInfo">
-  <div id="recipeDataContainer">
-    <div id="recipeImgContainer">
-      <img id="recipeImg" src="images/java.jpg" align="middle" alt="recipeImage">
-    </div>
-    <div id="recipeData">
-      <h1 id="recipeTitle">RecipeTitle which can be very long sometimes</h1>
-      <div id="recipeStepsContainer">
-        <div id="recipeMetaData">
-          <form>
-            <p><Strong> Source: </Strong><label id="recipeSource">Recipe Source</label></p>
-            <p><Strong> Calorie Count:</Strong><label id="calorieInfo"> 2000 calories </label> </p>
-            <p><Strong> Ready In: </Strong><label id="recipeTime">20 mins</label></p>
-            <p><Strong> Serving Size: </Strong><label id="servingSize">2</label></p>
-            <p><Strong> Vegetarian: </Strong><label id="vegCheck">20 mins</label></p>
-            <p><Strong> Gluten Free: </Strong><label id="glutenCheck">20 mins</label></p>
-            <p><Strong> dairy Free: </Strong><label id="dairyCheck">20 mins</label></p>
-          </form>
-        </div>
-        <div id="ingredients"><Strong> Ingredients Required </Strong>
-          <div id="reqIngredients"></div>
+  <nav class="navbar navbar-expand-md navbar-inverse bg-inverse fixed-top">
+    <p class="navanchor-Heading">NutriChoice</p>
+    <a class="navbar-brand" href="../index.html">Home</a>
+  </nav>
+  <div class="container" id="wrapperContainer">
+    <div id="recipeInfo">
+      <div id="recipeImgContainer">
+        <img id="recipeImg" src="images/java.jpg" alt="recipeImage">
+      </div>
+      <div id="recipeDataContainer">
+        <h1 id="recipeTitle">RecipeTitle which can be very long sometimes</h1>
+        <div id="recipeData">
+          <div id="recipeMetaData">
+            <form>
+              <p><Strong> Source: </Strong><label id="recipeSource">Recipe Source</label></p>
+              <p><Strong> Calorie Count: </Strong><label id="calorieInfo"> 2000 calories </label> </p>
+              <p><Strong> Ready In: </Strong><label id="recipeTime">20 mins</label></p>
+              <p><Strong> Serving Size: </Strong><label id="servingSize">2</label></p>
+              <p><Strong> Vegetarian: </Strong><label id="vegCheck">20 mins</label></p>
+              <p><Strong> Gluten Free: </Strong><label id="glutenCheck">20 mins</label></p>
+              <p><Strong> Dairy Free: </Strong><label id="dairyCheck">20 mins</label></p>
+            </form>
+          </div>
+          <div id="recipeIngredients">
+            <div id="reqIngredients">
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-  <h1 style="line-height: 0px;"><strong> Recipe Instructions </strong></h1>
- </div>
-
- <h2 class="similarRecipies">You might also like</h2>
- <div id="relatedRecipies">
- </div>
- 
 </body>
 </html>
