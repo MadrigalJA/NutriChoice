@@ -29,6 +29,8 @@ var mashapeKey = "V8LgO9xnyAmshdOH0OjtyW0rcpuWp1yLyd0jsn2AnxQDjbFR34";
         var byNutClass = document.getElementById("byNutrientsTab").className;
         var byRndClass = document.getElementById("randomTab").className;
         var handleFlag ;
+        
+        clearError("searchResultsError");
 
         var urlstr;
 
@@ -58,13 +60,9 @@ var mashapeKey = "V8LgO9xnyAmshdOH0OjtyW0rcpuWp1yLyd0jsn2AnxQDjbFR34";
                     //call api
                     loadSearch( urlstr)
                 }
-                else
-                {
-                    //display error
-                }
                 break;
             case 3:
-                //call api
+                    loadSearch(urlstr)
                 break;
             default:
                 //weird error major foobar
@@ -88,9 +86,11 @@ var mashapeKey = "V8LgO9xnyAmshdOH0OjtyW0rcpuWp1yLyd0jsn2AnxQDjbFR34";
                     ingredients = ingredients.replace(/\n*/, "%2C");
 
                     url += ingredients;
+                    clearError("ingredientsError");
                 }
                 else
                 {
+                    displayError("ingredientsError", "Must contain at least one ingredient and only include hyphens and commas.");
                     url = false;
                 }
 
@@ -98,23 +98,19 @@ var mashapeKey = "V8LgO9xnyAmshdOH0OjtyW0rcpuWp1yLyd0jsn2AnxQDjbFR34";
 
             case "RND":
                 var tagStr = "";
-                url = urlold = "random?limitLicense=false&number=1";
+                url = urlold = "random?limitLicense=false&number=4";
 
 
                 for (var i = 0; i < tags.length ; i++)
                 {
                     if (document.getElementById(tags[i]).checked)
                     {
-                        tagStr += tags[i] + "%2C+";
+                        tagStr += tags[i].toLowerCase() + "%2C";
                     }
                 }
                 if (tagStr != "")
                 {
                     url += ("&tags=" + tagStr);
-                }
-                else
-                {
-                    url = false;
                 }
                 break;
 
@@ -125,7 +121,7 @@ var mashapeKey = "V8LgO9xnyAmshdOH0OjtyW0rcpuWp1yLyd0jsn2AnxQDjbFR34";
                 for (var i = 0; i < nutrients.length ; i++)
                 {
                     var tempval = document.getElementById(nutrients[i]).value;
-                    if (tempval != "")
+                    if (tempval != "" && tempval.match(/\d+/))
                     {
                         nutrientStr += "&" + nutrients[i] + "=" + tempval;
                     }
@@ -134,10 +130,12 @@ var mashapeKey = "V8LgO9xnyAmshdOH0OjtyW0rcpuWp1yLyd0jsn2AnxQDjbFR34";
                 if (nutrientStr != "")
                 {
                     url += nutrientStr;
+                    clearError("nutrientsError");
                 }
                 else
                 {
                     url = false;
+                    displayError("nutrientsError", "Must include at least one constraint.");
                 }
                 break;
 
@@ -175,11 +173,12 @@ var mashapeKey = "V8LgO9xnyAmshdOH0OjtyW0rcpuWp1yLyd0jsn2AnxQDjbFR34";
             {
                 if (searchResults.recipes.length != 0)
                 {
-                    //display the recipe page
+                    displayResults(searchResults.recipes);
                 }
                 else
                 {
-                    //error message
+                    displayError("searchResultsError", "No Results Recieved for this tag combination.");
+                    clearSearch();
                 }
             }
             else
@@ -188,7 +187,17 @@ var mashapeKey = "V8LgO9xnyAmshdOH0OjtyW0rcpuWp1yLyd0jsn2AnxQDjbFR34";
                 {
                     displayResults(searchResults);
                 }
+                else
+                {
+                    displayError("searchResultsError", "No Results Recieved for these specifications.");
+                    clearSearch();
+                }
             }
+        }
+        else
+        {
+            displayError("searchResultsError", "No Results Found.");
+            clearSearch();
         }
     }
 
@@ -225,6 +234,27 @@ var mashapeKey = "V8LgO9xnyAmshdOH0OjtyW0rcpuWp1yLyd0jsn2AnxQDjbFR34";
           recipeBlock.appendChild(recipeLink);
 
           resultsSection.appendChild(recipeBlock);
+        }
+    }
+    
+    function displayError(elementID, errorMsg)
+    {
+        errorElem = document.getElementById(elementID);
+        errorElem.innerHTML = errorMsg;
+    }
+    
+    function clearError(elementID)
+    {
+        errorElem = document.getElementById(elementID);
+        errorElem.innerHTML = "";
+    }
+    
+    function clearSearch()
+    {
+        var resultsSection = document.getElementById("resultsSection");
+        while (resultsSection.hasChildNodes())
+        {
+            resultsSection.removeChild(resultsSection.lastChild);
         }
     }
 

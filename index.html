@@ -60,6 +60,7 @@
                     <div id="ingredientsForm" class="form-group">
                         <textarea class="form-control input-lg" id="ingredientsText" placeholder="Seperate ingredients by a comma..."></textarea>
                         <p>Do not include quantity/ measurements.</p>
+                        <p id="ingredientsError"></p>
                     </div>
 
                 </div><!-- /div ingredientsTab -->
@@ -79,6 +80,8 @@
                         <label class="col-lg-3 col-md-6 col-xs-12">Min Protein:<input type="number" class="form-control input-lg" id="minProtein" min="0" placeholder="Min Protein in grams"></label>
                         <label class="col-lg-3 col-md-6 col-xs-12">Max Protein:<input type="number" class="form-control input-lg" id="maxProtein" min="0" placeholder="Max Protein in grams"></label>
                     </div>
+                        <p>Input only numbers in the above fields. Any letters will not be included in the search.</p>
+                        <p id="nutrientsError"></p>
 
                 </div><!-- /div nutrientsTab -->
 
@@ -94,34 +97,12 @@
             <button class="btn btn-default" onClick="prepSearch()">Find Recipe</button>
         </div><!-- /div searchHeader-->
         <div id="searchResults">
-            <!-- <div id="searchNotice">
-            </div> -->
             <br><h3>Search Results:</h3><br>
-            <div id="resultsSection">
-            <div id="matchedRecipes">
-              <a href="#" id="404126">
-                <div>
-                  <img padding="auto" src="https://spoonacular.com/recipeImages/Asparagus-with-Mushrooms-404126.jpg" alt="image">
-                  <p>Asparagus with Mushrooms</p>
-                </div>
-              </a>
+            <div>
+                <p id="searchResultsError"></p>
             </div>
-            <div id="matchedRecipes">
-              <a href="#" id="404126">
-                <div>
-                  <img padding="auto" src="https://spoonacular.com/recipeImages/gingery_sauted_watercress_and_shiitakes_recipe-13795.jpg" alt="image">
-                  <p>Asparagus with Mushrooms</p>
-               </div>
-             </a>
-           </div>
-           <div id="matchedRecipes">
-            <a href="#" id="404126">
-              <div>
-                <img padding="auto" src="https://spoonacular.com/recipeImages/gingery_sauted_watercress_and_shiitakes_recipe-13795.jpg" alt="image">
-                <p>Asparagus with Mushrooms</p>
-              </div>
-            </a>
-          </div>
+            <div id="resultsSection">
+            </div>
         </div>
       </div>
     </div><!-- /.container -->
