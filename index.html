@@ -11,9 +11,9 @@
 
     <!-- Bootstrap core CSS -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    
+
     <link href="starter-template.css" rel="stylesheet">
-    
+    <link rel="stylesheet" type="text/css" href="RecipePage/styles/recipePageStyle.css">
   </head>
 
   <body>
@@ -38,8 +38,8 @@
         </ul>
       </div>
     </nav>
-    
-    
+
+
     <div class="container">
         <div id="searchHeader">
             <ul class="nav nav-pills mb-3" id="searchOptions" role="tablist">
@@ -53,7 +53,7 @@
                     <a class="nav-link" id="randomTab" data-toggle="pill" href="#random" role="tab" aria-controls="random" aria-expanded="true">Random</a>
                 </li>
             </ul>
-            
+
             <div class="tab-content" id="pills-tabContent">
                 <div class="tab-pane fade show active" id="ingredients" role="tabpanel" aria-labelledby="pills-home-tab">
                     <h3>Ingredients</h3>
@@ -61,46 +61,69 @@
                         <textarea class="form-control input-lg" id="ingredientsText" placeholder="Seperate ingredients by a comma..."></textarea>
                         <p>Do not include quantity/ measurements.</p>
                     </div>
-                    
+
                 </div><!-- /div ingredientsTab -->
-                
+
                 <div class="tab-pane fade" id="nutrients" role="tabpanel" aria-labelledby="pills-profile-tab">
                     <h3>Nutrients</h3>
                     <div id="nutrientForm" class="form-group row">
                         <label class="col-lg-3 col-md-6 col-xs-12">Min Calories:<input type="number" class="form-control input-lg" id="minCalories" value="" min="0" placeholder="Min Calories"></label>
                         <label class="col-lg-3 col-md-6 col-xs-12">Max Calories:<input type="number" class="form-control input-lg" id="maxCalories" value="" min="0" placeholder="Max Calories"></label>
-                        
+
                         <label class="col-lg-3 col-md-6 col-xs-12">Min Fat:<input type="number" class="form-control input-lg" id="minFat" min="0" placeholder="Min Fat in grams"></label>
                         <label class="col-lg-3 col-md-6 col-xs-12">Max Fat:<input type="number" class="form-control input-lg" id="maxFat" min="0" placeholder="Max Fat in grams"></label>
-                        
+
                         <label class="col-lg-3 col-md-6 col-xs-12">Min Carbs:<input type="number" class="form-control input-lg" id="minCarbs" min="0" placeholder="Min Carbs in grams"></label>
                         <label class="col-lg-3 col-md-6 col-xs-12">Max Carbs:<input type="number" class="form-control input-lg" id="maxCarbs" min="0" placeholder="Max Carbs in grams"></label>
-                        
+
                         <label class="col-lg-3 col-md-6 col-xs-12">Min Protein:<input type="number" class="form-control input-lg" id="minProtein" min="0" placeholder="Min Protein in grams"></label>
                         <label class="col-lg-3 col-md-6 col-xs-12">Max Protein:<input type="number" class="form-control input-lg" id="maxProtein" min="0" placeholder="Max Protein in grams"></label>
                     </div>
-                    
+
                 </div><!-- /div nutrientsTab -->
-                
+
                 <div class="tab-pane fade" id="random" role="tabpanel" aria-labelledby="pills-dropdown1-tab">
                     <h3>Choose from some of the preferences below and we will find a recipe for you.</h3>
-                    
+
                     <div class="form-group row" id="modTags">
                     </div>
                 </div><!-- /div randomTab -->
-                  
+
             </div>
-            
+
             <button class="btn btn-default" onClick="prepSearch()">Find Recipe</button>
         </div><!-- /div searchHeader-->
         <div id="searchResults">
-            <div id="searchNotice">
-            </div>
+            <!-- <div id="searchNotice">
+            </div> -->
             <br><h3>Search Results:</h3><br>
-            <div id="resultsSection" class="row" >
-            <div class="col-md-4 col-lg-3 col-xs-12"><div class="thumbnail"><a href="#" id="404126"><img class="img-thumbnail" padding="auto" src="https://spoonacular.com/recipeImages/Asparagus-with-Mushrooms-404126.jpg" alt="image"><div class="caption"><p>Asparagus with Mushrooms</p></div></a></div></div><div class="col-md-4 col-lg-3 col-xs-12"><div class="thumbnail"><a href="#" id="674425"><img class="img-thumbnail" padding="auto" src="https://spoonacular.com/recipeImages/Balsamic-Ginger-Grilled-Portobello-Mushrooms-674425.jpg" alt="image"><div class="caption"><p>Balsamic-Ginger Grilled Portobello Mushrooms</p></div></a></div></div><div class="col-md-4 col-lg-3 col-xs-12"><div class="thumbnail"><a href="#" id="115546"><img class="img-thumbnail" padding="auto" src="https://spoonacular.com/recipeImages/asparagus-with-mushrooms-2-115546.jpg" alt="image"><div class="caption"><p>Asparagus With Mushrooms</p></div></a></div></div><div class="col-md-4 col-lg-3 col-xs-12"><div class="thumbnail"><a href="#" id="9839"><img class="img-thumbnail" padding="auto" src="https://spoonacular.com/recipeImages/lilys-baby-bok-choy-with-dipping-sauce-2-9839.jpg" alt="image"><div class="caption"><p>Lily's Baby Bok Choy With Dipping Sauce</p></div></a></div></div><div class="col-md-4 col-lg-3 col-xs-12"><div class="thumbnail"><a href="#" id="13795"><img class="img-thumbnail" padding="auto" src="https://spoonacular.com/recipeImages/gingery_sauted_watercress_and_shiitakes_recipe-13795.jpg" alt="image"><div class="caption"><p>Gingery Sautéed Watercress And Shiitakes Recipe</p></div></a></div></div>
+            <div id="resultsSection">
+            <div id="matchedRecipes">
+              <a href="#" id="404126">
+                <div>
+                  <img padding="auto" src="https://spoonacular.com/recipeImages/Asparagus-with-Mushrooms-404126.jpg" alt="image">
+                  <p>Asparagus with Mushrooms</p>
+                </div>
+              </a>
             </div>
+            <div id="matchedRecipes">
+              <a href="#" id="404126">
+                <div>
+                  <img padding="auto" src="https://spoonacular.com/recipeImages/gingery_sauted_watercress_and_shiitakes_recipe-13795.jpg" alt="image">
+                  <p>Asparagus with Mushrooms</p>
+               </div>
+             </a>
+           </div>
+           <div id="matchedRecipes">
+            <a href="#" id="404126">
+              <div>
+                <img padding="auto" src="https://spoonacular.com/recipeImages/gingery_sauted_watercress_and_shiitakes_recipe-13795.jpg" alt="image">
+                <p>Asparagus with Mushrooms</p>
+              </div>
+            </a>
+          </div>
         </div>
+      </div>
     </div><!-- /.container -->
 
 
@@ -111,6 +134,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <script src="search.js"></script>
-    
+
   </body>
 </html>
