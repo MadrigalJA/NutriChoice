@@ -1,6 +1,10 @@
- let tags = ["African", "Chinese", "Japanese", "Korean", "Vietnamese", "Thai", "Indian", "British", "Irish", "French", "Italian", "Mexican", "Spanish", "Middle Eastern", "Jewish", "American", "Southern", "Greek", "German", "Caribbean", "Latin American", "Pescetarian", "Lacto ", "Vegetarian", "Ovo Vegetarian", "Vegan", "Paleo", "Primal", "Vegetarian", "Main Course", "Side Dish", "Dessert", "Appetizer", "Salad", "Bread", "Breakfast", "Soup", "Beverage", "Sauce", "Drink"];
+ let tags = ["African", "Chinese", "Japanese", "Korean", "Vietnamese", "Thai", "Indian", "British", "Irish", "French", "Italian", "Mexican", "Spanish", "Middle Eastern", "Jewish", "American", "Southern", "Greek", "German", "Caribbean", "Latin American", "Pescetarian", "Lacto ", "Vegetarian", "Ovo Vegetarian", "Vegan", "Paleo", "Primal", "Main Course", "Side Dish", "Dessert", "Appetizer", "Salad", "Bread", "Breakfast", "Soup", "Beverage", "Sauce", "Drink"];
  let nutrients = ["maxCalories", "maxCarbs", "maxFat", "maxProtein", "minCalories", "minCarbs", "minFat", "minProtein"]
-var mashapeKey = "V8LgO9xnyAmshdOH0OjtyW0rcpuWp1yLyd0jsn2AnxQDjbFR34";
+// var mashapeKey = "V8LgO9xnyAmshdOH0OjtyW0rcpuWp1yLyd0jsn2AnxQDjbFR34";
+// productionKey
+var mashapeKey = "ip0pFVt0IamshZ8xUr0dhNQhBArmp12fdqdjsnmTBFoAipNjid";
+//testKey
+// var mashapeKey = "V8LgO9xnyAmshdOH0OjtyW0rcpuWp1yLyd0jsn2AnxQDjbFR34";
     function init()
     {
         buildRandomTab();
@@ -29,7 +33,7 @@ var mashapeKey = "V8LgO9xnyAmshdOH0OjtyW0rcpuWp1yLyd0jsn2AnxQDjbFR34";
         var byNutClass = document.getElementById("byNutrientsTab").className;
         var byRndClass = document.getElementById("randomTab").className;
         var handleFlag ;
-        
+
         clearError("searchResultsError");
 
         var urlstr;
@@ -206,9 +210,9 @@ var mashapeKey = "V8LgO9xnyAmshdOH0OjtyW0rcpuWp1yLyd0jsn2AnxQDjbFR34";
         var resultsSection = document.getElementById("resultsSection");
         var recipeBlock, recipeLink, recipeImg, caption, captionDiv;
         resultsSection.innerHTML = "";
-        
+
         displayError("resultsHeader", "Search Results:");
-        
+
         for(var i = 0 ; i < recipes.length ; i++)
         {
           recipeImg = document.createElement("img");
@@ -238,19 +242,19 @@ var mashapeKey = "V8LgO9xnyAmshdOH0OjtyW0rcpuWp1yLyd0jsn2AnxQDjbFR34";
           resultsSection.appendChild(recipeBlock);
         }
     }
-    
+
     function displayError(elementID, errorMsg)
     {
         errorElem = document.getElementById(elementID);
         errorElem.innerHTML = errorMsg;
     }
-    
+
     function clearError(elementID)
     {
         errorElem = document.getElementById(elementID);
         errorElem.innerHTML = "";
     }
-    
+
     function clearSearch()
     {
         var resultsSection = document.getElementById("resultsSection");
