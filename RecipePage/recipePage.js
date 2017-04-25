@@ -1,9 +1,9 @@
 
 var baseUrl = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/";
 //productionKey
-// var mashapeKey = "ip0pFVt0IamshZ8xUr0dhNQhBArmp12fdqdjsnmTBFoAipNjid";
+var mashapeKey = "ip0pFVt0IamshZ8xUr0dhNQhBArmp12fdqdjsnmTBFoAipNjid";
 //testKey
-var mashapeKey = "V8LgO9xnyAmshdOH0OjtyW0rcpuWp1yLyd0jsn2AnxQDjbFR34";
+// var mashapeKey = "V8LgO9xnyAmshdOH0OjtyW0rcpuWp1yLyd0jsn2AnxQDjbFR34";
 var recipeId = localStorage.recipeId;
 
 function start() {
