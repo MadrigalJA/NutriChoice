@@ -5,7 +5,6 @@
     <meta id="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta id="description" content="">
     <meta id="author" content="">
-    <link rel="icon" href="bootstrap/favicon.ico">
 
     <title>NutriChoice Recipe Planning Tool</title>
 
@@ -59,8 +58,8 @@
                     <h3>Ingredients</h3>
                     <div id="ingredientsForm" class="form-group">
                         <textarea class="form-control input-lg" id="ingredientsText" placeholder="Seperate ingredients by a comma..."></textarea>
-                        <p>Do not include quantity/ measurements.</p>
-                        <p id="ingredientsError"></p>
+                        <p>Include only the ingredient names and commas to seperate them. Do not include measurements/quantities.</p>
+                        <p id="ingredientsError" class="error-text"></p>
                     </div>
 
                 </div><!-- /div ingredientsTab -->
@@ -80,8 +79,8 @@
                         <label class="col-lg-3 col-md-6 col-xs-12">Min Protein:<input type="number" class="form-control input-lg" id="minProtein" min="0" placeholder="Min Protein in grams"></label>
                         <label class="col-lg-3 col-md-6 col-xs-12">Max Protein:<input type="number" class="form-control input-lg" id="maxProtein" min="0" placeholder="Max Protein in grams"></label>
                     </div>
-                        <p>Input only numbers in the above fields. Any letters will not be included in the search.</p>
-                        <p id="nutrientsError"></p>
+                        <p>Input only numbers in the above fields. Any fields with letters will be ignored.</p>
+                        <p id="nutrientsError" class="error-text"></p>
 
                 </div><!-- /div nutrientsTab -->
 
@@ -97,9 +96,9 @@
             <button class="btn btn-default" onClick="prepSearch()">Find Recipe</button>
         </div><!-- /div searchHeader-->
         <div id="searchResults">
-            <br><h3>Search Results:</h3><br>
+            <br><h3 id="resultsHeader"></h3><br>
             <div>
-                <p id="searchResultsError"></p>
+                <h4 id="searchResultsError"></h4>
             </div>
             <div id="resultsSection">
             </div>

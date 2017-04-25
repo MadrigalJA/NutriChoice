@@ -177,7 +177,7 @@ var mashapeKey = "V8LgO9xnyAmshdOH0OjtyW0rcpuWp1yLyd0jsn2AnxQDjbFR34";
                 }
                 else
                 {
-                    displayError("searchResultsError", "No Results Recieved for this tag combination.");
+                    displayError("searchResultsError", "No Results Found");
                     clearSearch();
                 }
             }
@@ -189,7 +189,7 @@ var mashapeKey = "V8LgO9xnyAmshdOH0OjtyW0rcpuWp1yLyd0jsn2AnxQDjbFR34";
                 }
                 else
                 {
-                    displayError("searchResultsError", "No Results Recieved for these specifications.");
+                    displayError("searchResultsError", "No Results Found");
                     clearSearch();
                 }
             }
@@ -206,9 +206,11 @@ var mashapeKey = "V8LgO9xnyAmshdOH0OjtyW0rcpuWp1yLyd0jsn2AnxQDjbFR34";
         var resultsSection = document.getElementById("resultsSection");
         var recipeBlock, recipeLink, recipeImg, caption, captionDiv;
         resultsSection.innerHTML = "";
+        
+        displayError("resultsHeader", "Search Results:");
+        
         for(var i = 0 ; i < recipes.length ; i++)
         {
-
           recipeImg = document.createElement("img");
           recipeImg.setAttribute("padding", "auto");
           recipeImg.src = recipes[i].image;

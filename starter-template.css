@@ -6,10 +6,6 @@ body {
     text-align: center;
 }
 
-    @media (min-width: 768px) {
-  .row {
-    display: flex;
-    align-items: flex-end;
-  }
-    
+.error-text {
+    color: #ff1a1a;
 }
