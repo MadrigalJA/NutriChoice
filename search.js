@@ -1,10 +1,11 @@
- let tags = ["African", "Chinese", "Japanese", "Korean", "Vietnamese", "Thai", "Indian", "British", "Irish", "French", "Italian", "Mexican", "Spanish", "Middle Eastern", "Jewish", "American", "Southern", "Greek", "German", "Caribbean", "Latin American", "Pescetarian", "Lacto ", "Vegetarian", "Ovo Vegetarian", "Vegan", "Paleo", "Primal", "Main Course", "Side Dish", "Dessert", "Appetizer", "Salad", "Bread", "Breakfast", "Soup", "Beverage", "Sauce", "Drink"];
- let nutrients = ["maxCalories", "maxCarbs", "maxFat", "maxProtein", "minCalories", "minCarbs", "minFat", "minProtein"]
+ const tags = ["African", "Chinese", "Japanese", "Korean", "Vietnamese", "Thai", "Indian", "British", "Irish", "French", "Italian", "Mexican", "Spanish", "Middle Eastern", "Jewish", "American", "Southern", "Greek", "German", "Caribbean", "Latin American", "Pescetarian", "Lacto ", "Vegetarian", "Ovo Vegetarian", "Vegan", "Paleo", "Primal", "Main Course", "Side Dish", "Dessert", "Appetizer", "Salad", "Bread", "Breakfast", "Soup", "Beverage", "Sauce", "Drink"];
+const nutrients = ["maxCalories", "maxCarbs", "maxFat", "maxProtein", "minCalories", "minCarbs", "minFat", "minProtein"]
 // var mashapeKey = "V8LgO9xnyAmshdOH0OjtyW0rcpuWp1yLyd0jsn2AnxQDjbFR34";
 // productionKey
-var mashapeKey = "ip0pFVt0IamshZ8xUr0dhNQhBArmp12fdqdjsnmTBFoAipNjid";
+const mashapeKey = "ip0pFVt0IamshZ8xUr0dhNQhBArmp12fdqdjsnmTBFoAipNjid";
 //testKey
 // var mashapeKey = "V8LgO9xnyAmshdOH0OjtyW0rcpuWp1yLyd0jsn2AnxQDjbFR34";
+
     function init()
     {
         buildRandomTab();
