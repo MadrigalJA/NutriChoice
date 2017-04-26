@@ -39,18 +39,18 @@ const mashapeKey = "ip0pFVt0IamshZ8xUr0dhNQhBArmp12fdqdjsnmTBFoAipNjid";
 
         var urlstr;
 
-        if (byIngClass.includes(strActive))
+        if (byIngClass.indexOf(strActive) != -1)
         {
             urlstr = buildUrl("ING");
             handleFlag = 1;
 
         }
-        else if (byNutClass.includes(strActive))
+        else if (byNutClass.indexOf(strActive) != -1)
         {
             urlstr = buildUrl("NUT");
             handleFlag = 2;
         }
-        else if (byRndClass.includes(strActive))
+        else if (byRndClass.indexOf(strActive) != -1)
         {
             urlstr = buildUrl("RND");
             handleFlag = 3;
