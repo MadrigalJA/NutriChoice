@@ -155,7 +155,7 @@ const mashapeKey = "ip0pFVt0IamshZ8xUr0dhNQhBArmp12fdqdjsnmTBFoAipNjid";
     function loadSearch( urlExtension)
     {
         var field = document.getElementById("searchBar");
-        let baseUrl = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/";
+        const baseUrl = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/";
         var xhttp = new XMLHttpRequest();
         var url = baseUrl + urlExtension;
         xhttp.onload = function(){
