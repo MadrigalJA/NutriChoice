@@ -1,5 +1,9 @@
 body {
-  padding-top: 5rem;
+    padding-top: 5rem;x
+}
+
+body, button{
+    cursor: pointer;
 }
 
 .thumbnail{
