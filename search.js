@@ -268,8 +268,7 @@ const mashapeKey = "ip0pFVt0IamshZ8xUr0dhNQhBArmp12fdqdjsnmTBFoAipNjid";
     function navToRecipe(recipeID)
     {
         //passing the recipe ID to the recipePage
-        //localStorage.setItem("recipeId",recipeID);
-        sessionStorage.recipeId = recipeID;
+        localStorage.setItem("recipeId",recipeID);        
     }
 
 window.addEventListener("load", init, false);
